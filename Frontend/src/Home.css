@@ -1,0 +1,286 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.formContainer {
+  position: relative;
+  height: 100vh; 
+  width: 100%; 
+  overflow: hidden; 
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1; 
+  }
+
+  .formWrapper {
+    position: relative;
+    padding: 30px 60px;
+    border-radius: 15px;
+    box-shadow: rgba(255, 255, 255, 0.4) 0px 0px 0px 2px, 
+      rgba(255, 255, 255, 0.65) 0px 4px 6px -1px, 
+      rgba(0, 0, 0, 0.08) 0px 1px 0px inset;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    width: 400px;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .logo {
+      color: white;
+      font-weight: bold;
+      font-size: 30px;
+    }
+
+    .title {
+      color: #f3e5ab;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      width: 100%;
+
+      input {
+        padding: 15px;
+        border: none;
+        border-bottom: 2px solid #a7bcff;
+        width: 100%;
+        font-size: 16px;
+        outline: none;
+        border-radius: 15px;
+
+        &::placeholder {
+          color: #afafaf;
+        }
+      }
+
+      button {
+        padding: 12px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        background-color: #7b96ec;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 100px;
+
+        &:hover {
+          background-color: #5b75c4;
+        }
+      }
+    }
+
+    p {
+      color: #f3e5ab;
+      font-size: 16px;
+      margin-top: 15px;
+
+      a {
+        color: #7b96ec;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.home {
+  .navContainer {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    background-color: aqua;
+    align-items: center;
+    justify-content: center;
+
+    .title {
+      font-size: 30px;
+      font-weight: 700;
+    }
+  }
+
+  .content {
+    display: flex;
+    height: calc(100vh - 20px);
+    margin: 0;
+
+    .dashboard {
+      background-color: lightgray;
+      width: 15%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .items {
+        font-size: 18px;
+        padding: 15px 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #e0e0e0;
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+
+    .imgcontainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      background-color: black;
+      overflow: hidden;
+
+      .fadeveil {
+        max-width: 70%;
+        max-height: 70%;
+        object-fit: contain;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: rgba(0, 0, 0, 0.6) 0px 8px 16px, rgba(0, 0, 0, 0.2) 0px 12px 40px;
+        }
+      }
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column; /* Align items vertically */
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: black;
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+        padding: 20px;
+        background-color: #1c1c1c;
+        border-width: 4px;
+        border-style: solid;
+        border-image: linear-gradient(90deg, aqua, #40e0d0, aqua) 1;
+        animation: moveBorder 3s linear infinite; /* Traveling border animation */
+
+        .infoText {
+          color: white;
+          font-size: 15px;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+
+        .fileContainer {
+          width: 100%;
+          text-align: center;
+
+          .fileInput {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+
+            input[type="file"] {
+              width: 200px;
+              padding: 10px;
+              border: 2px dashed #007bff;
+              border-radius: 5px;
+              background-color: #f8f9fa;
+              cursor: pointer;
+              transition: border-color 0.3s ease;
+
+              &:hover {
+                border-color: #0056b3;
+              }
+            }
+
+            button {
+              padding: 10px 15px;
+              border: none;
+              background-color: #40e0d0;
+              color: black;
+              font-weight: bold;
+              border-radius: 5px;
+              cursor: pointer;
+              transition: background-color 0.3s;
+
+              &:hover {
+                background-color: aqua;
+              }
+            }
+          }
+
+          .progressBar {
+            height: 20px;
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+
+            .progressFill {
+              height: 100%;
+              background-color: aqua;
+              width: 0;
+              transition: width 0.3s ease;
+            }
+          }
+
+          .progressText {
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #f8f9fa;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Border Animation */
+@keyframes animate-border {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(calc(100% - 4px), 0);
+  }
+  50% {
+    transform: translate(calc(100% - 4px), calc(100% - 4px));
+  }
+  75% {
+    transform: translate(0, calc(100% - 4px));
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

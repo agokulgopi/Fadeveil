@@ -1,0 +1,13 @@
+cryptography
+python-dotenv
+Pillow
+opencv-python
+pygetwindow
+pyautogui
+pynput
+tkinter
+PyInstaller
+magic
+subprocess
+ffpyplayer
+pygam
